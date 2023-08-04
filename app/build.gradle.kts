@@ -1,8 +1,11 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
+    kotlin("kapt")
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.dagger.hilt)
 }
+
 
 android {
     namespace = "replace.me.helloword"
@@ -31,11 +34,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -52,13 +55,17 @@ android {
 
 dependencies {
 
+    // Android
     implementation(libs.core.ktx)
-
     implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.compose.activity)
+
+    // DI
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     // Compose
     implementation(platform(libs.compose.bom))
+    implementation(libs.compose.activity)
     implementation(libs.compose.ui)
     implementation(libs.compose.graphics)
     implementation(libs.compose.preview)
