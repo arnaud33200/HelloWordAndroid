@@ -1,0 +1,45 @@
+[versions]
+
+# Andorid
+core-ktx = "1.10.1"
+agp = "8.1.0"
+org-jetbrains-kotlin-android = "1.8.10"
+lifecycle-runtime-ktx = "2.6.1"
+
+# Compose
+compose-bom = "2023.06.01"
+activity-compose = "1.7.2"
+
+# Test
+junit = "4.13.2"
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[plugins]
+
+com-android-application = { id = "com.android.application", version.ref = "agp" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[libraries]
+
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+
+# Compose
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+
+# Compose tooling
+compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+
+# Test
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[bundles]
+
